@@ -1,0 +1,21 @@
+import type { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Digital Farmers - खेधूत और व्यापारी का अपना बाजार",
+  description: "अपनी फसल का सही दाम पाएं, सीधे व्यापारी के साथ।",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="gu">
+      <body className="antialiased bg-white text-gray-900">
+        {children}
+      </body>
+    </html>
+  );
+}
