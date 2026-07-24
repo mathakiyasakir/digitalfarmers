@@ -2,8 +2,11 @@
 
 import React from 'react';
 import { Sprout, ShoppingCart, TrendingUp, ShieldCheck, PhoneCall } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 export const Hero: React.FC = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="relative bg-gradient-to-b from-emerald-50 via-teal-50/30 to-white pt-12 pb-20 overflow-hidden">
       {/* Decorative Background Elements */}
@@ -15,17 +18,21 @@ export const Hero: React.FC = () => {
           {/* Top Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100/80 text-emerald-800 text-sm font-semibold border border-emerald-200 shadow-sm">
             <TrendingUp className="w-4 h-4 text-emerald-600" />
-            <span>खेधूत और व्यापारी का अपना भरोसेमंद डिजिटल बाजार</span>
+            <span>{t('heroTag')}</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
-            अपनी फसल का पाएँ <span className="text-emerald-600 underline decoration-emerald-400 decoration-wavy underline-offset-8">सही दाम</span>, सीधे व्यापारी के साथ!
+            {t('heroTitle1')}
+            <span className="text-emerald-600 underline decoration-emerald-400 decoration-wavy underline-offset-8">
+              {t('heroTitle2')}
+            </span>
+            {t('heroTitle3')}
           </h1>
 
           {/* Subheading */}
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed font-normal">
-            बिना किसी बिचौलिए (Middleman) के अपनी उपज बेचें या खरीदें। मंडी के लाइव भाव देखें और सीधा व्यापार करें।
+            {t('heroDesc')}
           </p>
 
           {/* CTA Buttons (Primary Action) */}
@@ -33,13 +40,13 @@ export const Hero: React.FC = () => {
             {/* For Khedut */}
             <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg shadow-emerald-600/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
               <Sprout className="w-6 h-6" />
-              फसल बेचें (खेधूत)
+              {t('sellCrop')}
             </button>
 
             {/* For Vyapari */}
             <button className="w-full sm:w-auto flex items-center justify-center gap-3 bg-teal-800 hover:bg-teal-900 text-white font-bold text-lg px-8 py-4 rounded-2xl shadow-lg shadow-teal-800/30 transition-all transform hover:-translate-y-0.5 cursor-pointer">
               <ShoppingCart className="w-6 h-6" />
-              फसल खरीदें (व्यापारी)
+              {t('buyCrop')}
             </button>
           </div>
 
@@ -50,8 +57,8 @@ export const Hero: React.FC = () => {
                 <ShieldCheck className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-gray-900">100% सुरक्षित</h4>
-                <p className="text-xs text-gray-500">वेरिफाइड खेधूत व व्यापारी</p>
+                <h4 className="text-sm font-bold text-gray-900">100% Verified</h4>
+                <p className="text-xs text-gray-500">Farmers & Buyers</p>
               </div>
             </div>
 
@@ -60,8 +67,8 @@ export const Hero: React.FC = () => {
                 <TrendingUp className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-gray-900">ताजा मंडी भाव</h4>
-                <p className="text-xs text-gray-500">रोजाना अपडेटेड रेट्स</p>
+                <h4 className="text-sm font-bold text-gray-900">Live APMC Rates</h4>
+                <p className="text-xs text-gray-500">Updated Daily</p>
               </div>
             </div>
 
@@ -70,8 +77,8 @@ export const Hero: React.FC = () => {
                 <PhoneCall className="w-5 h-5" />
               </div>
               <div>
-                <h4 className="text-sm font-bold text-gray-900">सीधा संपर्क</h4>
-                <p className="text-xs text-gray-500">कॉल या व्हाट्सएप करें</p>
+                <h4 className="text-sm font-bold text-gray-900">Direct Contact</h4>
+                <p className="text-xs text-gray-500">Call / WhatsApp</p>
               </div>
             </div>
           </div>
