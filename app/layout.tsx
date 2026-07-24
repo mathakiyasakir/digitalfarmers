@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { Providers } from "@/components/Providers";
 
 export const metadata: Metadata = {
   title: "Digital Farmers - खेधूत और व्यापारी का अपना बाजार",
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="gu">
       <body className="antialiased bg-white text-gray-900">
-        <LanguageProvider>
-          {children}
-        </LanguageProvider>
+        <Providers>
+          <LanguageProvider>
+            {children}
+          </LanguageProvider>
+        </Providers>
       </body>
     </html>
   );
